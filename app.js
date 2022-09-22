@@ -1,15 +1,14 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const http = require('http');
 
-app.get('/', (request, response) => {
-  response.send('Hello from Express and CPu!')
-})
+const hostname = '127.0.0.1';
+const port = 3000;
 
-app.listen(port, (err) => {
-  if (err) {
-    return console.log('something bad happened', err)
-  }
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World');
+});
 
-  console.log(`server is listening on ${port}`)
-})
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});

@@ -1,8 +1,5 @@
 {
   "engines": {
     "node": "1.14.2"
-  },
-  "dependencies": {
-    "express": "^4.18.1"
   }
 }
